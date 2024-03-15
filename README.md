@@ -3,7 +3,7 @@
 
 # How to run
 
--open the app folder
--in terminal run: ` npm i `
--when installed: ` npm run start `
--should open a new tab on 'localhost:3000'
+- open the app folder
+- in terminal run: ` npm i `
+- when installed: ` npm run start `
+- should open a new tab on 'localhost:3000'
