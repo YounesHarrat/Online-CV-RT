@@ -1,6 +1,7 @@
 import './App.css';
 import profilLight from "./assets/ppA.png"
-
+import { Chrono } from "react-chrono"
+import {data as items} from "./data.js"
 
 function App() {
   return (
@@ -21,14 +22,14 @@ function App() {
               </div>
 
               <div className='profil-picture flex justify-center items-center w-60 shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.25),_10px_10px_30px_4px_rgba(14,165,233,.25)] rounded-full bg-black'>
-                {/** <img src={profilLight} alt="profil-pic" className='rounded-full w-full h-auto object-cover '/> **/}
+                <img src={profilLight} alt="profil-pic" className='rounded-full w-full h-auto object-cover '/>
               </div>
             </div>
           </section>
 
 
           <section className='w-4/5 h-fit rounded-3xl shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)]'>
-            <div className='text-4xl text-center pt-12'>Professional Experience</div>
+            <div className='text-4xl text-center pt-12 underline'>Professional Experience</div>
 
             <div className="xps-template flex flex-col justify-evenly gap-1 px-12 pb-12">
               <div className='text-3xl text-center p-10'>Touchdown</div>
@@ -141,58 +142,73 @@ function App() {
 
             </div>
           </section>
-{/**
-          <section className='w-4/5 h-fit rounded-3xl shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)]'>
-            <div className='text-4xl text-center pt-12'>Advanced Studies</div>
 
+{/**
+ *           <section className='w-4/5 h-fit rounded-3xl shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)]'>
+            <div className='text-4xl text-center pt-12 underline'>Advanced Studies</div>
+            
             <div className="xps-template flex flex-col justify-evenly gap-1 px-12 pb-12">
-              <div className='text-3xl text-center p-10'>Work-Study Master</div>
+              <div className='text-3xl text-center p-10'>Work-Study Master - Bac+5 </div>
 
               <div className="flex flex-row items-center w-full py-8">
-                <div className='min-w-80 w-fit flex flex-col justify-evenly gap-3 text-left'>
-                  <div className='text-xl'>M2I Tech Academy Degree: Conception and Developpement of Secured Application </div>
+                <div className='min-w-80 w-fit flex flex-col justify-evenly gap-3 text-left shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)] rounded-3xl p-8 w-full'>
+                  <div className='text-xl'>M2I Tech Academy </div>
+                  <div className='text-xl'>Degree: Conception and Developpement of Application </div>
+                  <div className='text-lg'>Rythm: 3 weeks work / 1 week study </div>
                 </div>
-              </div>
-
-              <div className="opinion shadow-[-10px_-10px_30px_4px_rgba(255,255,255,0.1),_10px_10px_30px_4px_rgba(0,0,0,0.15)] rounded-3xl p-4">
-                <p>
-                  I liked the fact that they chose to use Svelte as a framework and also i discovered working with Microsoft Dynamics 365
-                  I liked the overall atmosphere of the company and their kindness and their open-minded spirit !
-                  I like being tasked some back-end works and learned how to handle it better than i did.
-                  And how could i forget the usual friday team-building time at the restaurant !
-                </p>
               </div>
             </div>
 
-            <div className="xps-template flex flex-col justify-evenly gap-1 px-12 pb-12">
-              <div className='text-3xl text-center p-10'>University Licence - (BAC+3) </div>
+            <div className="flex flex-col justify-evenly gap-1 px-12 pb-12">
+              <div className='text-3xl text-center p-10'>University Licence - BAC+3 </div>
 
               <div className="flex flex-row items-center w-full py-8">
-                <div className='min-w-80 w-fit flex flex-col justify-evenly gap-3 text-left'>
-                  <div className='text-xl'>Job position: Apprentice FrontEnd Developper</div>
-                  <div className='text-xl'>For: ~2 years from December 2020 to September 2022</div>
-                  <div className='text-xl'>Technical Stack: Angular 17  </div>
-                  <div className='text-xl'>Referent: Maxime Defenin - Lead Developper </div>
+                <div className='min-w-80 w-fit flex flex-col justify-evenly gap-3 text-left shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)] rounded-3xl p-8 w-full'>
+                  <div className='text-xl'>University of Littoral Côte d'Opale</div>
+                  <div className='text-xl'>Degree: IT Licence </div>
+                  <div className='text-lg'>Rythm: Continued learning </div>
                 </div>
               </div>
+            </div>
 
-              <div className="desc pb-8" >
-                <div className="text-2xl py-4">" The unique interface for the connected operator and manager "</div>
-                <p>
-                  Picomto guides the operator from the moment they take up their position by providing them with the digital platform which allows them to consult their tasks to be carried out, the instructions to follow and access information from factory 4.0.                
-                </p>
+            <div className="flex flex-col justify-evenly gap-1 px-12 pb-12">
+              <div className='text-3xl text-center p-10'>Preparation School to Engeneering Schools</div>
+
+              <div className="flex flex-row items-center w-full py-8">
+                <div className='min-w-80 w-fit flex flex-col justify-evenly gap-3 text-left shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)] rounded-3xl p-8 w-full'>
+                  <div className='text-xl'>Lycée de l'Europe</div>
+                  <div className='text-xl'>Degree: PTSI/PT First and Second year of advanced Mathematics with industrial science classes </div>
+                  <div className='text-lg'>Rythm: Extensive Continued learning </div>
+                </div>
               </div>
+            </div>
 
-              <div className="opinion shadow-[-10px_-10px_30px_4px_rgba(255,255,255,0.1),_10px_10px_30px_4px_rgba(0,0,0,0.15)] rounded-3xl p-4">
-                <p>
-                  I liked how i was onboarded, in spite of the covid period, i learned a lot in my 2 first weeks.
-                  In fact my referent and i were the only one at the work space, i still remember some rules that he gave me: KISS (Keep it Stupid and Simple) and also the infamous but necessary RTM (Read The Manual) 
-                </p>
+            <div className="flex flex-col justify-evenly gap-1 px-12 pb-12">
+              <div className='text-3xl text-center p-10'> BAC S - Speciality Math - Option English </div>
+
+              <div className="flex flex-row items-center w-full py-8">
+                <div className='min-w-80 w-fit flex flex-col justify-evenly gap-3 text-left shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)] rounded-3xl p-8 w-full'>
+                  <div className='text-xl'>Lycée de l'Europe</div>
+                  <div className='text-lg'>Rythm: Continued learning </div>
+                </div>
               </div>
-
             </div>
           </section>
-  **/}
+ */}
+
+          <section className='w-4/5 grid place-items-center h-fit rounded-3xl shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)]'>
+            <div className='w-4/5 '>
+              <Chrono items={items} mode="VERTICAL" />
+            </div>            
+          </section>
+
+          <section className='w-4/5 grid place-items-center h-fit rounded-3xl shadow-[-10px_-10px_30px_4px_rgba(255,255,255,.1),_10px_10px_30px_4px_rgba(0,0,0,.15)]'>
+            <div className='text-3xl py-8'> About Me </div>          
+            <div className='text-xl p-8 '>I like music ! who doesn't ? I've been learning and playing guitar as an autodidact for over 10 years</div>
+            <div className='text-xl p-8'>I'm a Chess, Video Games and Anime lover who also likes to travel by its own</div>
+            <div className='text-xl p-8'>I am an AI enthusiast and i'm thrilled to experiment with new technologies</div>
+          </section>
+
           </main>
         <footer></footer>
     </>
