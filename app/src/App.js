@@ -114,7 +114,7 @@ function App() {
                   <div className="text-left p-8">
                     <div>- User Experience Testing </div>
                     <div>- Agile Metodology: Scrum + Kanban</div>
-                    <div>- Autonomy in learning</div>
+                    <div>- Autonomous learning</div>
                   </div>
                 </div>
 
