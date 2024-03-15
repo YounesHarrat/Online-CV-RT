@@ -69,7 +69,7 @@ function App() {
                   </div>
                   <div className="text-left p-8">
                     <div>- Self Management</div>
-                    <div>- Problem Solving</div>
+                    <div>- Creativity</div>
                     <div>- Adaptabilty</div>
                   </div>
                 </div>
@@ -112,9 +112,9 @@ function App() {
                     Hard Skills
                   </div>
                   <div className="text-left p-8">
-                    <div>- Testing and debugging</div>
-                    <div>- Agile Metodology: Kanban</div>
-                    <div>- Object Oriented Programming</div>
+                    <div>- User Experience Testing </div>
+                    <div>- Agile Metodology: Scrum + Kanban</div>
+                    <div>- Autonomy in learning</div>
                   </div>
                 </div>
 
@@ -123,9 +123,9 @@ function App() {
                     Soft Skills
                   </div>
                   <div className="text-left p-8">
-                    <div>- Self Management</div>
+                    <div>- Team Working and communication</div>
+                    <div>- Reading about new technologies</div>
                     <div>- Problem Solving</div>
-                    <div>- Adaptabilty</div>
                   </div>
                 </div>
               </div>
