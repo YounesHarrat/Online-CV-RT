@@ -3,7 +3,9 @@ import profilLight from "./assets/ppA.png"
 import { Chrono } from "react-chrono"
 import {dataEN as itemsEN, dataFR as itemsFR} from "./data.js"
 import { useState } from 'react';
-
+import linkedinIcon from "./assets/linkedin.svg"
+import githubIcon from "./assets/github.svg"
+import youtubeIcon from "./assets/youtube.svg"
 
 function App() {
   const [showMore, setVisibleShowMore] = useState(false);
@@ -60,13 +62,6 @@ function App() {
 
     activeLangEl.classList.remove("active-lang");
     targetLangEl.classList.add("active-lang");
-    console.log("setActiveLang::", {
-      currentLang, 
-      lang,
-      translatorsDiv,
-      activeLangEl,
-      targetLangEl
-    })
 
   }
 
@@ -75,9 +70,9 @@ function App() {
     <>
         <main id="main" className='grid w-screen h-fit place-items-center gap-10 py-10'>
           <section className='w-4/5 h-fit rounded-3xl shadow-light'>
-            <header className='text-center text-white p-4 bg-sky-500 border-black border-b-2 flex flex-row justify-between'>
+            <header className='text-center text-white p-4 bg-sky-500 border-black border-b-2 flex flex-row justify-between rounded-t-3xl'>
               <div className='spacer min-w-1/3 w-1/3'></div>
-              <div className='text-5xl w-1/3'>Younes Harrat</div>
+              <h1 className='text-5xl w-1/3'>Younes Harrat</h1>
               <div className='w-1/3 text-center flex flex-row justify-around items-center'>
                 <div className='spacer w-1/4'></div>
                 <div className='translator-button text-center flex md:flex-row sm:flex-col sm:h-fit space-x-2' id="translators">
@@ -100,11 +95,13 @@ function App() {
             <div className='flex flex-row justify-between p-10 items-center h-1/3 w-full p-8'>
               <div className='contacts min-w-80 w-fit flex flex-col justify-evenly gap-3 text-left'>
                 <div className='text-2xl underline pt-4'>Contacts</div>
-                <div className='text-xl'>Phone: 07.78.58.92.19</div>
-                <div className='text-xl'>Email: Younesharrat5896@gmail.com</div>
-                <div className='text-2xl underline pt-4'>Socials</div>
-                <div className='text-xl'>Linkedin: https://www.linkedin.com/in/younesharrat/</div>
-                <div className='text-xl'>Github: https://github.com/YounesHarrat</div>
+                <div className='text-xl pl-8'>Phone: 07.78.58.92.19</div>
+                <div className='text-xl pl-8'>Email: Younesharrat5896@gmail.com</div>
+                <div className='text-2xl underline pt-4 flex flex-row justify-evenly w-fit'>
+                  Socials
+                  <div className='text-xl pl-8'><a href="https://www.linkedin.com/in/younesharrat/"> <img src={linkedinIcon} alt="linkedin-icon" /></a></div>
+                  <div className='text-xl pl-8'><a href="https://github.com/YounesHarrat"><img src={githubIcon} alt="github-icon" /></a></div>
+                </div>
               </div>
 
               <div className='profil-picture flex justify-center items-center w-60 shadow-light rounded-full bg-black'>
@@ -112,7 +109,6 @@ function App() {
               </div>
             </div>
           </section>
-
 
           <section className='w-4/5 h-fit rounded-3xl shadow-light'>
             <div className='text-4xl text-center pt-12 underline'>{currentLang === "EN" ? "Professional Experience" : "Expérience Professionelle" }</div>
@@ -256,24 +252,16 @@ function App() {
           </section>
 
           <section className='w-4/5 grid place-items-center h-fit rounded-3xl'>
-            <div className='w-4/5 '>
-              {currentLang === "EN" ?
-                <>
-                  <Chrono items={itemsEN} mode="VERTICAL_ALTERNATING" allowDynamicUpdates={true} activeItemIndex={itemsEN.length -1} enableLayoutSwitch={false} enableDarkToggle={true} textDensity="LOW" enableQuickJump={false}  />
-                </>
-              :
-                <>
-                  <Chrono items={itemsFR} mode="VERTICAL_ALTERNATING" allowDynamicUpdates={true} activeItemIndex={itemsFR.length -1} enableLayoutSwitch={false} enableDarkToggle={true} textDensity="LOW" enableQuickJump={false}  />
-                </>
-              }
+            <div className='w-full'>
+              <Chrono  items={currentLang === "EN" ? itemsEN : itemsFR} mode="VERTICAL_ALTERNATING" toolbarPosition="BOTTOM" disableToolbar={true} highlightCardsOnHover={true} allowDynamicUpdate={true} activeItemIndex={itemsFR.length -1} enableLayoutSwitch={false} enableDarkToggle={true} textDensity="LOW" enableQuickJump={false}  />
             </div>            
           </section>
 
-          <div className='text-2xl p-4 text-center bg-sky-500 w-fit rounded-3xl' onClick={seeMore}> {currentLang === "EN" ? "Learn More About Me" : "En savoir plus sur moi" } </div>          
+          <div className='seeMore text-white text-2xl p-4 text-center bg-sky-500 w-fit rounded-3xl' onClick={seeMore}> {currentLang === "EN" ? "Learn More About Me" : "En savoir plus sur moi" } </div>          
 
               
           {showMore && 
-            <section className='w-4/5 grid place-items-center h-fit rounded-3xl shadow-light'>
+            <section className='w-4/5 grid place-items-center h-fit rounded-3xl shadow-light space-y-2'>
               <div className='text-xl p-8 text-left w-full'>
                 {currentLang === "EN" ?
                 "I'm a Chess player since childhood, Video Games and Manga/Anime passionnate who also likes to travel alone."
@@ -281,11 +269,23 @@ function App() {
                 "Je suis un joueur d'echecs depuis l'enfance, un passioné de jeux vidéo et de manga/anime qui aime aussi voyager en solitaire."
                 }
               </div>
-              <div className='text-xl p-8 text-left w-full'>
+              <div className='text-xl p-8 text-left w-full space-y-2'>
                 {currentLang === "EN" ?
-                <>I like music ! who doesn't ? I've been learning and playing guitar as an autodidact for over 10 years. <br/> <br/> You can even check my unupdated Youtube Channel at: https://www.youtube.com/@MrNejiraito </>
+                <>
+                  <div>I like music ! who doesn't ? I've been learning and playing guitar as an autodidact for over 10 years.</div>
+                  <div className='flex flex-row text-center items-center space-x-4'>
+                    <div>You can even check my unupdated Youtube Channel at: </div>
+                    <div><a href="https://www.youtube.com/@MrNejiraito"> <img src={youtubeIcon} alt="youtube-icon" /></a> </div>
+                  </div>
+                </>
                 :
-                <>J'aime la musique ! Qui n'aimes pas ? J'ai appris à jouer de la guitare en autodidacte depuis plus de 10 ans maintenant. <br/> <br/> Vous pouvez si l'envie vous prends aller écouter quelques reprise que j'ai faites sur ma chaine youtube: https://www.youtube.com/@MrNejiraito </>
+                <>
+                  <div>J'aime la musique ! Qui n'aimes pas ? J'ai appris à jouer de la guitare en autodidacte depuis plus de 10 ans maintenant. </div>
+                  <div className='flex flex-row text-center items-center space-x-4'>
+                    <div>Vous pouvez si l'envie vous prends aller écouter quelques reprise que j'ai faites: </div>
+                    <div><a href="https://www.youtube.com/@MrNejiraito"> <img src={youtubeIcon} alt="youtube-icon" /></a> </div>
+                  </div>
+                </>
                 }
               </div>
               <div className='text-xl p-8 text-left w-full'>
