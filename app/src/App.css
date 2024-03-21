@@ -16,14 +16,15 @@
 
 }
 
-
+.center {
+  margin-left: 25%;
+}
 
 .seeMore {
   border: 2px solid #422800;
   border-radius: 30px;
   box-shadow: #422800 4px 4px 0 0;
   cursor: pointer;
-  display: inline-block;
   font-weight: 600;
   font-size: 18px;
   padding: 0 18px;
